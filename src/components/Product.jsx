@@ -18,6 +18,7 @@ const Product = () => {
           width: "80%",
           margin: "auto",
           display: "flex",
+          flexWrap: "wrap",
           alignItems: "center",
           gap: "2px",
           overflow: "hidden",

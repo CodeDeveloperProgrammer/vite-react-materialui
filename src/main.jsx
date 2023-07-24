@@ -10,7 +10,6 @@ import "@fontsource/roboto/700.css";
 import "./index.css";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 
-
 const theme = createTheme({
   palette: {
     primary: {
@@ -22,11 +21,18 @@ const theme = createTheme({
   },
 });
 
+import { BrowserRouter } from "react-router-dom";
+import { SnackbarProvider } from "notistack";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <App />
+      <BrowserRouter>
+        <SnackbarProvider maxSnack={3} autoHideDuration={3000}>
+          <CssBaseline />
+          <App />
+        </SnackbarProvider>
+      </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>
 );

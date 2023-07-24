@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
+
 import {
   AppBar,
   Box,
@@ -8,9 +10,11 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import NavListDrawer from "./NavListDrawer";
+
+
 import MenuIcon from "@mui/icons-material/Menu";
 
+import NavListDrawer from "./NavListDrawer";
 
 const Navbar = ({navArrayLinks}) => {
   const [open, setOpen] = useState(false);
@@ -38,8 +42,8 @@ const Navbar = ({navArrayLinks}) => {
             <Button
               key={link.title}
               color="inherit"
-              component="a"
-              href={link.path}
+              component={NavLink}
+                to={link.path}
             >
               {link.title}
             </Button>
@@ -56,8 +60,8 @@ const Navbar = ({navArrayLinks}) => {
       >
         <NavListDrawer 
         navArrayLinks={navArrayLinks}
+        NavLink={NavLink}
         setOpen={setOpen}
-        //NavLink={NavLink} 
         />
       </Drawer>
     </>

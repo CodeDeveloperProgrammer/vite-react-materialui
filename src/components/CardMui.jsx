@@ -9,19 +9,24 @@ import {
 } from "@mui/material";
 
 const CardMui = () => {
+
   return (
     <>
-      <Card sx={{ 
-        maxWidth: 345, 
-        m: "auto",
-        transition: "all .5s ease",
-        transform: "scale(1)",
-        rotate: "-15deg",
-        "&:hover": {
-          transform: "scale(1.1)",
-          rotate: "0deg"
-        }
-      }}>
+      <Card
+        sx={{
+          maxWidth: 345,
+          m: "auto",
+          display: "flex",
+          flexDirection: "column",
+          transition: "all .5s ease",
+          transform: "scale(1)",
+          rotate: "0deg",
+          "&:hover": {
+            transform: "scale(1.1)",
+            rotate: "15deg",
+          },
+        }}
+      >
         <CardActionArea>
           <CardMedia
             component={"img"}

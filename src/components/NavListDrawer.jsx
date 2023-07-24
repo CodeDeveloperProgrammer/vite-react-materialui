@@ -7,7 +7,7 @@ import {
   ListItemText,
 } from "@mui/material";
 
-const NavListDrawer = ({ navArrayLinks }) => {
+const NavListDrawer = ({ navArrayLinks, NavLink, setOpen }) => {
   return (
     <Box
       bgcolor="#884A39"
@@ -20,7 +20,11 @@ const NavListDrawer = ({ navArrayLinks }) => {
         <List>
           {navArrayLinks.map((item) => (
             <ListItem disablePadding key={item.title}>
-              <ListItemButton href={item.path} component="a">
+              <ListItemButton  
+              component={NavLink}
+              to={item.path}
+              onClick={() => setOpen(false)}
+              >
               <ListItemIcon>{item.icon}</ListItemIcon>
                 <ListItemText primary={item.title} />
               </ListItemButton>
